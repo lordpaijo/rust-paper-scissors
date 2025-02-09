@@ -7,7 +7,7 @@ This is my first rust-written project: a rock, paper, and scissors game. I have 
  - colored
 
 ## Build and Run
-```rust
+```
 cargo update # updating the project dependencies...
 cargo build # buzzzbuzzbuzzz, here comes the slow-ass build...
 cargo test # and boom! Here comes the wuzz wuzz speed.
