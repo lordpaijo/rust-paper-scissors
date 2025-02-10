@@ -15,7 +15,7 @@ You can install it via [Cargo](https://crates.io/), or by building it yourself.
 
 ### Cargo
 ```sh
-cargo install rps_paijo
+$ cargo install rps_paijo
 
 ```
 
