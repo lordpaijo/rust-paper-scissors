@@ -9,7 +9,17 @@ This is my first rust-written project: a rock, paper, and scissors game. I have 
  - rand
  - colored
 
-## Build and Run
+## Installing
+
+You can install it via [Cargo](https://crates.io/), or by building it yourself.
+
+### Cargo
+```sh
+cargo install rps_paijo
+
+```
+
+### Build from source
 Clone the repo 👹.
 ```sh
 $ git clone https://github.com/lordpaijo/rust-paper-scissors.git # https
