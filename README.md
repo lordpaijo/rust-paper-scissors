@@ -11,7 +11,7 @@ This is my first rust-written project: a rock, paper, and scissors game. I have 
 
 ## Installing
 
-You can install it via [Cargo](https://crates.io/), or by building it yourself.
+The package is available at [Crates.io](https://crates.io/crates/rps_paijo). You can install it via [Cargo](https://crates.io/), or by building it yourself. (Make sure you have cargo installed already.)
 
 ### Cargo
 ```sh
@@ -31,8 +31,15 @@ Now let's get rusty...
 ```
 $ cargo update # updating the project dependencies...
 $ cargo build # buzzzbuzzbuzzz, here comes the slow-ass build...
-$ cargo test # and boom! Here comes the wuzz wuzz speed.
-$ cargo run # or you can use this to run it...
+```
+
+## Playing
+Finished installing or building, you can now play the game. If you installed the already published package, then you can execute it by typing `rps_paijo` on your terminal just like any other CLI apps. Or if you built it from source, then do the followings:
+
+```sh
+$ cd rust-paper-scissors/
+$ cargo run
+
 ```
 
 ## Thanks......
