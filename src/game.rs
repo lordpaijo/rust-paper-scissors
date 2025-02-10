@@ -2,6 +2,7 @@ use rand::Rng;
 use std::io;
 use colored::*;
 
+#[warn(non_snake_case)]
 pub fn Game() {
     println!("{}", "\nwelcome to rock, paper, scissors!\n".yellow());
     let choices = ["rock", "paper", "scissors"];
@@ -11,16 +12,18 @@ pub fn Game() {
     let mut rounds: u64 = 1;
     loop {
         Header(user, com, ties, rounds);
+
         let mut user_input = String::new();
         io::stdin().read_line(&mut user_input).expect("Failed to read input");
         let user_choice = user_input.trim().to_lowercase();
-        
+
         if !choices.contains(&user_choice.as_str()) && 
           user_choice.as_str().trim().to_lowercase() != "exit" {
             println!("{}","Invalid choice! Please enter rock, paper, or scissors.".red()); 
             return;
         }   if user_choice.as_str().trim().to_lowercase() == "exit"
             { println!("{} {}", "\nExitting game,".red(), "goodbye!".green()); break; }
+
         Logic(&mut user, &mut com, &mut ties, &mut rounds, &choices, user_choice);
     }
 }
