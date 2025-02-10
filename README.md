@@ -2,6 +2,8 @@
 
 This is my first rust-written project: a rock, paper, and scissors game. I have a lot of fun with it but don't expect me to get a job. It was built using cargo.
 
+![skrinsut](https://github.com/lordpaijo/rust-paper-scissors/blob/Main/screenshots/ss_0.png)
+
 ## Dependencies
  - cargo (duh)
  - rand
