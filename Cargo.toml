@@ -1,7 +1,13 @@
 [package]
 name = "rps_paijo"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+authors = ["LordPaijo (Iyan) iyanmaumakan.56.com"]
+description = "My first project of a simple Rock, Paper, Scissors game in Rust."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/lordpaijo/rust-paper-scissors"
+homepage = "https://github.com/lordpaijo/rust-paper-scissors"
+documentation = "https://docs.rs/rps_paijo"
 
 [dependencies]
 rand = "0.9.0"
