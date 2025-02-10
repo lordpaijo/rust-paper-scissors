@@ -8,7 +8,7 @@ This is my first rust-written project: a rock, paper, and scissors game. I have 
 
 ## Build and Run
 Clone the repo 👹.
-```git
+```sh
 git clone https://github.com/lordpaijo/rust-paper-scissors.git # https
 git clone git@github.com:lordpaijo/rust-paper-scissors.git     # ssh
 cd rust-paper-scissors/
