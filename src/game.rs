@@ -4,7 +4,7 @@ use colored::*;
 
 #[warn(non_snake_case)]
 pub fn run() {
-    println!("{}", "\nwelcome to rock, paper, scissors!\n".yellow());
+    println!("{}", "\nwelcome to Rust, Paper, Scissors!\n".yellow());
     let choices = ["rock", "paper", "scissors"];
     let mut user: i32 = 0;
     let mut com: i32 = 0;
