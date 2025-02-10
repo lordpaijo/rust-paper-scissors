@@ -42,4 +42,6 @@ $ cargo run
 
 ```
 
+The already built executable is stored at `target/debug/`, there you can find an executable named `*rps_paijo`. You can either run it by anyway you like, or by `cargo run` just like the instructions above.
+
 ## Thanks......
