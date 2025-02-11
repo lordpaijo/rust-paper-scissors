@@ -12,3 +12,4 @@ documentation = "https://docs.rs/rps_paijo"
 [dependencies]
 rand = "0.9.0"
 colored = "3.0.0"
+crossterm = "0.28.1"

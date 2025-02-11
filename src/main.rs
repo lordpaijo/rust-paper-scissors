@@ -1,6 +1,8 @@
 mod game;
 
-fn main() { 
-    game::run();
+fn main() {
+    loop {
+        let restart = game::run();
+        if !restart { break; }
+    }
 }
-
