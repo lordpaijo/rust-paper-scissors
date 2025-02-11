@@ -65,8 +65,5 @@ Rust is interesting, and IT IS interesting. It feels like the JavaScript of the 
 ### How to Contribute?
 --- 11/2/2025 21:41 P.M ---
 I haven't think of about this, sooner or later ;)
-=======
-The already built executable is stored at `target/debug/`, there you can find an executable named `*rps_paijo`. You can either run it by anyway you like, or by `cargo run` just like the instructions above.
->>>>>>> dfd5e02574d55e36a46585dd615e1cd77db9494a
 
 ## Thanks......
