@@ -27,7 +27,7 @@ pub fn run() -> bool {
 
 fn header(user: i32, com: i32, ties: i32, rounds: u64) {
     println!("{}{}", "round: ".yellow(), rounds);
-    println!("{}\t {}: {}\t {}: {}\t {}: {}", 
+    println!("{} \t{}: {} \t{}: {} \t{}: {}", 
         "enter your choice (rock, paper, scissors):".cyan(), 
         "you".green(), user, "com".red(), com, "ties".yellow(), ties);
 }
@@ -45,7 +45,7 @@ fn logic(user:&mut i32, com:&mut i32, ties:&mut i32, rounds:&mut u64,
                 std::thread::sleep(std::time::Duration::from_secs(1)); return Some(true); }
     else if !choices.contains(&user_choice.as_str()) && 
         user_choice.as_str().trim().to_lowercase() == "end"
-            { println!("\n{}\n\n{}: {}\t\t{}: {} \t{}: {}", "Ending game...".blue().bold(),
+            { println!("\n{}\n\n{}: {} \t{}: {} \t{}: {}", "Ending game...".blue().bold(),
                 "Wins".green().bold(), *user, "Loses".red().bold(), *com, "Ties".yellow().bold(), *ties); 
             if *user > *com { 
                 println!("\n{} {} {}", "You have more".yellow().bold(), "Wins".green().bold(),
