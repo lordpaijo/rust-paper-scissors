@@ -4,8 +4,9 @@ use crossterm::{execute, terminal::{Clear, ClearType}};
 use std::io::{stdout};
 use colored::*;
 
-#[warn(non_snake_case)]
 pub fn run() -> bool {
+    execute!(stdout(), Clear(ClearType::All)).unwrap();
+    std::thread::sleep(std::time::Duration::from_secs(1));
     execute!(stdout(), Clear(ClearType::All)).unwrap();
     // std::thread::sleep(std::time::Duration::from_secs(1)); /* IN CASE OF A CLEAR SCREEN BUG */
     println!("{}{}, {}, {}!\n", "\nWelcome to ".yellow().bold(), 
@@ -37,7 +38,7 @@ fn logic(user:&mut i32, com:&mut i32, ties:&mut i32, rounds:&mut u64,
     if !choices.contains(&user_choice.as_str()) && 
         (user_choice.as_str().trim().to_lowercase() == "exit" ||
          user_choice.as_str().trim().to_lowercase() == "quit")
-               { println!("{} {}", "\nQuitting game,".red(), "goodbye!".green()); return Some(false); }
+            { println!("{} {}", "\nQuitting game,".red(), "goodbye!".green()); return Some(false); }
     if !choices.contains(&user_choice.as_str()) && 
         (user_choice.as_str().trim().to_lowercase() == "restart" ||
          user_choice.as_str().trim().to_lowercase() == "reset") 
