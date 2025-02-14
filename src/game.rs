@@ -1,30 +1,46 @@
+
 use rand::Rng;
 use std::io;
 use crossterm::{execute, terminal::{Clear, ClearType}};
-use std::io::{stdout};
+use std::io::stdout;
 use colored::*;
 
-pub fn run() -> bool {
+
+pub fn run(mut current_round: u64, rounds_limit: Option<u64>, auto: bool) -> bool {
     execute!(stdout(), Clear(ClearType::All)).unwrap();
-    std::thread::sleep(std::time::Duration::from_secs(1));
-    execute!(stdout(), Clear(ClearType::All)).unwrap();
-    // std::thread::sleep(std::time::Duration::from_secs(1)); /* IN CASE OF A CLEAR SCREEN BUG */
     println!("{}{}, {}, {}!\n", "\nWelcome to ".yellow().bold(), 
         "Rust".truecolor(214, 93, 14).bold(), "Paper".green().bold(), "Scissors".blue().bold());
-    let choices = ["rock", "paper", "scissors"];
-    let mut user: i32 = 0; let mut com: i32 = 0;
-    let mut ties: i32 = 0; let mut rounds: u64 = 1;
-    loop {
-        header(user, com, ties, rounds);
-        let mut user_input = String::new();
-        io::stdin().read_line(&mut user_input).expect("Failed to read input");
-        let user_choice = user_input.trim().to_lowercase();
-        let result = logic(&mut user, &mut com, &mut ties, &mut rounds, &choices, user_choice);
 
-        if result == Some(false) { return false; }
+    let choices = ["rock", "paper", "scissors"];
+    let mut user: i32 = 0;
+    let mut com: i32 = 0;
+    let mut ties: i32 = 0;
+
+    loop {
+        if let Some(limit) = rounds_limit {
+            if current_round > limit {
+                println!("{}","\nRound limit reached!".blue().bold());
+                print_final_score(user, com, ties);
+                return false; }
+        }
+
+        header(user, com, ties, current_round);
+
+        let user_choice = if auto {
+            let random_choice = choices[rand::rng().random_range(0..3)];
+            println!("{} {}", "(Auto) You chose:".cyan().bold(), random_choice);
+            random_choice.to_string() }
+        else { let mut user_input = String::new();
+            io::stdin().read_line(&mut user_input).expect("Failed to read input");
+            user_input.trim().to_lowercase() };
+
+        let result = logic(&mut user, &mut com, &mut ties, &mut current_round, &choices, user_choice);
+
+        if result == Some(false) { return false; } 
         else if result == Some(true) { return true; }
     }
 }
+
 
 fn header(user: i32, com: i32, ties: i32, rounds: u64) {
     println!("{}{}", "round: ".yellow(), rounds);
@@ -76,4 +92,14 @@ fn logic(user:&mut i32, com:&mut i32, ties:&mut i32, rounds:&mut u64,
             *com += 1 }
     }  *rounds += 1;
     None
+}
+
+fn print_final_score(user: i32, com: i32, ties: i32) {
+    println!("\n{}: {} \t{}: {} \t{}: {}", "Wins".green().bold(), user, 
+             "Loses".red().bold(), com, "Ties".yellow().bold(), ties);
+    if user > com { println!("\n{} {} {}", "You have more".yellow().bold(), "Wins".green().bold(), 
+                 "than the computer, nice!".yellow().bold()); }
+    else if user < com { println!("\n{} {} {}", "You have more".yellow().bold(), "Loses".red().bold(), 
+                 "than the computer, nice try...".yellow().bold()); }
+    else { println!("{}", "Well done, you both hit a tie!".yellow().bold()); }
 }

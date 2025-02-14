@@ -42,7 +42,20 @@ $ cargo run
 ```
 
 ## Playing
-I don't think I have to tell you how to play the game in general, it's the same as any other rock, paper, and scissors. Though I want to address some additional features which they all are in the form of commands.
+I don't think I have to tell you how to play the game in general, it's the same as any other rock, paper, and scissors. Though I want to address some additional features which will be separated into two forms, arguments and commands.
+
+### Arguments
+Arguments can be called by typing them after calling the game. Like flags or tags in any other program, they can be called using `-` or `--` before them. For example, `--help` will give you the help page which what's isnide is the list of available arguments.
+
+```sh
+  -r, --rounds <ROUNDS>
+      --auto
+  -h, --help         Print help
+  -V, --version      Print version
+
+```
+### Commands
+As for the commands, they are special in game commands that do simple yet useful things... yeah that's dumb.
 
 ```
  - exit / quit : Quitting your game's session without any results.
