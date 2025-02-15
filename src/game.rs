@@ -1,4 +1,3 @@
-
 use rand::Rng;
 use std::io;
 use crossterm::{execute, terminal::{Clear, ClearType}};
@@ -19,11 +18,9 @@ pub fn run(mut current_round: u64, rounds_limit: Option<u64>, auto: bool) -> boo
     loop {
         if let Some(limit) = rounds_limit {
             if current_round > limit {
-                println!("{}","\nRound limit reached!".blue().bold());
+                println!("{}","Round limit reached!".blue().bold());
                 print_final_score(user, com, ties);
-                return false; }
-        }
-
+                return false; } }
         header(user, com, ties, current_round);
 
         let user_choice = if auto {
@@ -35,7 +32,6 @@ pub fn run(mut current_round: u64, rounds_limit: Option<u64>, auto: bool) -> boo
             user_input.trim().to_lowercase() };
 
         let result = logic(&mut user, &mut com, &mut ties, &mut current_round, &choices, user_choice);
-
         if result == Some(false) { return false; } 
         else if result == Some(true) { return true; }
     }
@@ -96,10 +92,10 @@ fn logic(user:&mut i32, com:&mut i32, ties:&mut i32, rounds:&mut u64,
 
 fn print_final_score(user: i32, com: i32, ties: i32) {
     println!("\n{}: {} \t{}: {} \t{}: {}", "Wins".green().bold(), user, 
-             "Loses".red().bold(), com, "Ties".yellow().bold(), ties);
+            "Loses".red().bold(), com, "Ties".yellow().bold(), ties);
     if user > com { println!("\n{} {} {}", "You have more".yellow().bold(), "Wins".green().bold(), 
-                 "than the computer, nice!".yellow().bold()); }
+            "than the computer, nice!".yellow().bold()); }
     else if user < com { println!("\n{} {} {}", "You have more".yellow().bold(), "Loses".red().bold(), 
-                 "than the computer, nice try...".yellow().bold()); }
+            "than the computer, nice try...".yellow().bold()); }
     else { println!("{}", "Well done, you both hit a tie!".yellow().bold()); }
 }
