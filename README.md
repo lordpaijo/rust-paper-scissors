@@ -62,17 +62,4 @@ As for the commands, they are special in-game commands that do simple yet useful
 
 And that's everything, I hope... Enjoy playing!
 
-## FAQs
-### What's the purpose of this project?
---- 11/2/2025 21:32 P.M ---
-I made this project as a way to learn rust and its environments since I've found it interesting. And learning by doing some projects like this helps a lot for me. It's also a way for me to have fun! So don't take it too serious.
-
-### Why Rust?
---- 11/2/2025 21:38 P.M ---
-Rust is interesting, and IT IS interesting. It feels like the JavaScript of the C Family. However, I'm using it not because of the reasons why others are using it, like safety or so. I can still make an unsafe program because I'm stupid anyway. But I'm using Rust because it's either C++ or Rust, and the bet chose Rust...
-
-### How to Contribute?
---- 11/2/2025 21:41 P.M ---
-I haven't thought about this, sooner or later ;)
-
 ## Thanks......
