@@ -8,6 +8,7 @@ This is my first rust-written project: a rock, paper, and scissors game. I have 
  - cargo (duh)
  - rand
  - colored
+ - clap
 
 ## Installing and Running
 
