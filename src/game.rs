@@ -31,21 +31,18 @@ pub fn run(
         if let Some(limit) = rounds_limit 
         { if current_round > limit {
             println!("{}","Round limit reached!".blue().bold());
-            print_final_score(user, com, ties);
-            return false; }}
+            print_final_score(user, com, ties); return false; }
+        }
         if skip == Some(current_round) 
             || (skip_rounds.as_ref().map_or(false, |rounds| rounds.contains(&current_round)))
             || (skip_even && current_round % 2 == 0)
             || (skip_odd && current_round % 2 != 0)
             || (skip_prime && is_prime(current_round)) 
-        { println!("Skipping round {}\n", current_round);
-          current_round += 1;
-          continue; }
+        { println!("Skipping round {}\n", current_round); current_round += 1; continue; }
         if (set_even && current_round % 2 != 0)
             || (set_odd && current_round % 2 == 0)
             || (set_prime && !is_prime(current_round)) 
-        { current_round += 1;
-          continue; }
+        { current_round += 1; continue; }
 
         header(user, com, ties, current_round);
 

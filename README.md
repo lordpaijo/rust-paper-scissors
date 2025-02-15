@@ -47,11 +47,21 @@ I don't think I have to tell you how to play the game in general, it's the same 
 Arguments can be called by typing them after calling the game. Like flags or tags in any other program, they can be called using `-` or `--` before them. For example, `--help` will give you the help which what's inside it is the page of the list of available arguments.
 
 ```sh
-  -r, --rounds <ROUNDS>
-      --auto
-  -h, --help         Print help
-  -V, --version      Print version
+  -r, --rounds <ROUNDS>                    
+  -a, --auto                               
+  -s, --skip <SKIP>                        
+      --skip-rounds <SKIP_ROUNDS>          
+      --skip-even                          
+      --skip-odd                           
+      --skip-prime                         
+      --set-start-round <SET_START_ROUND>  
+      --set-even-round                     
+      --set-odd-round                      
+      --set-prime-round                    
+  -h, --help                               Print help
+  -V, --version                            Print version
 ```
+
 ### Commands
 As for the commands, they are special in-game commands that do simple yet useful things... yeah that's dumb.
 
