@@ -62,6 +62,13 @@ Arguments can be called by typing them after calling the game. Like flags or tag
   -V, --version                            Print version
 ```
 
+| Arguments | Parameters | Types | Functions | Syntax |
+|-----------|------------|-------|-----------|--------|
+| `-r` `--roounds` | `<ROUNDS>` | `u64` | Sets round limit | `rps_paijo --rounds <ROUNDS>` |
+| `-a` `--auto` |  | `bool` | Sets mode to auto (bot vs bot) | `rps_paijo --auto` |
+| `-s` `--skip` | `<ROUND>` | `u64` | Skips the one round | `rps_paoijo --skip <ROUND>` |
+| `--skip-rounds` | `<ROUNDS>` | `u64` | Skips the inputted rounds | `rps_paijo --skip-rounds <ROUNDS>` |
+
 ### Commands
 As for the commands, they are special in-game commands that do simple yet useful things... yeah that's dumb.
 
