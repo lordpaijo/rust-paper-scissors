@@ -5,6 +5,8 @@ use clap::Parser;
 #[command(author, version, about, long_about = None, 
     name = "Rust Paper Scissors")]
 
+/* test */
+
 struct Args {
     #[arg(short, long)] rounds: Option<u64>, 
     #[arg(short, long)] auto: bool,
