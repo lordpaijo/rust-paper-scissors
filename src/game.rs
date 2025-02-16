@@ -35,7 +35,7 @@ pub fn run(
         }
         if (set_even && set_odd) || (set_even && set_prime) || (set_odd && set_prime) 
             || (set_even && skip_even) || (set_odd && skip_odd) || (set_prime && skip_prime) 
-            || (skip_even && skip_odd && skip_prime) || (skip_all && (current_round > 0 || rounds_limit > Some(0)))
+            || (skip_even && skip_odd && skip_prime) || (skip_all && (current_round < 1 || rounds_limit < Some(1)))
         { println!("{}", "Cannot whitelist the passed arguments! Dumping game...goodbye!".red().bold());
           return false; }
         if skip == Some(current_round) 
@@ -43,7 +43,7 @@ pub fn run(
             || (skip_even && current_round % 2 == 0)
             || (skip_odd && current_round % 2 != 0)
             || (skip_prime && is_prime(current_round))
-            || (skip_all && current_round > 0 && rounds_limit > Some(0))
+            || (skip_all && current_round > 1 && rounds_limit > Some(0))
         { println!("Skipping round {}\n", current_round); current_round += 1; continue; }
         if ((set_even && current_round % 2 != 0) && (!skip_odd))
             || ((set_odd && current_round % 2 == 0) && (!skip_even))
