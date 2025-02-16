@@ -46,37 +46,31 @@ I don't think I have to tell you how to play the game in general, it's the same 
 ### Arguments
 Arguments can be called by typing them after calling the game. Like flags or tags in any other program, they can be called using `-` or `--` before them. For example, `--help` will give you the help which what's inside it is the page of the list of available arguments.
 
-```sh
-  -r, --rounds <ROUNDS>                    
-  -a, --auto                               
-  -s, --skip <SKIP>                        
-      --skip-rounds <SKIP_ROUNDS>          
-      --skip-even                          
-      --skip-odd                           
-      --skip-prime                         
-      --set-start-round <SET_START_ROUND>  
-      --set-even-round                     
-      --set-odd-round                      
-      --set-prime-round                    
-  -h, --help                               Print help
-  -V, --version                            Print version
-```
-
 | Arguments | Parameters | Types | Functions | Syntax |
-|-----------|------------|-------|-----------|--------|
-| `-r` `--roounds` | `<ROUNDS>` | `u64` | Sets round limit | `rps_paijo --rounds <ROUNDS>` |
+|-----------|------------|:-----:|-----------|--------|
+| `-h` `--help` |  | `bool` | Prints help page | `rps_paijo --help` |
+| `-V` `--version` |  | `bool` | Prints the game's version | `rps_paijo --help` |
+| `-r` `--roounds` | `<ROUNDS>` e.g: 15| `u64` | Sets round limit | `rps_paijo --rounds <ROUNDS>` |
 | `-a` `--auto` |  | `bool` | Sets mode to auto (bot vs bot) | `rps_paijo --auto` |
-| `-s` `--skip` | `<ROUND>` | `u64` | Skips the one round | `rps_paoijo --skip <ROUND>` |
-| `--skip-rounds` | `<ROUNDS>` | `u64` | Skips the inputted rounds | `rps_paijo --skip-rounds <ROUNDS>` |
+| `-s` `--skip` | `<SKIP ROUND>` e.g: 5| `u64` | Skips the one round | `rps_paoijo --skip <SKIP ROUND>` |
+| `--skip-rounds` | `<SKIP ROUNDS>` e.g: (3, 5, 8)| `Vector <u64>` | Skips the inputted rounds | `rps_paijo --skip-rounds <SKIP ROUNDS>` |
+| `--skip-even` |  | `bool` | Skips rounds with even numbers | `rps_paijo --skip-even` |
+| `--skip-odd` |  | `bool` | Skips rounds with odd numbers | `rps_paijo --skip-odd` |
+| `--skip-prime` |  | `bool` | Skips rounds with prime numbers | `rps_paijo --skip-proime` |
+| `--skip-all` |  | `bool` | Skips all the rounds after round 1 | `rps_paijo --skip-all` |
+| `--set-start-round` | `<START ROUND>` e.g: 12| `u64` | Starts the round at the inputted | `rps_paojo --set-start-round` |
+| `--set-even-round` |  | `bool` | Sets the game to only play rounds with even numbers | `rps_paijo --set-even-round` |
+| `--set-odd-round` |  | `bool` | Sets the game to only play rounds with odd numbers | `rps_paijo --set-odd-round` |
+| `--set-prime-round` |  | `bool` | Sets the game to only play rounds with prime numbers | `rps_paijo --set-prime-round` |
 
 ### Commands
 As for the commands, they are special in-game commands that do simple yet useful things... yeah that's dumb.
 
-```
- - exit / quit : Quitting your game's session without any results.
- - restart / reset : Restart your game's session back to 0.
- - end : Ending your game's session with a result, either you win, lose, or draw.
-```
+| Commands | Functions |
+|----------|-----------|
+| `restart` / `reset` | Restarts the game |
+| `end` | Ends the game with a result |
+| `exit` | Exits the game without showing any results |
 
 And that's everything, I hope... Enjoy playing!
 
