@@ -1,0 +1,119 @@
+.TH RPS_PAIJO 1 "February 2025" "Version 2.0.2" "Rust, Paper, Scissors Manual"
+
+.SH NAME
+rps_paijo \- A Rock, Paper, Scissors game with customizable rules.
+
+.SH SYNOPSIS
+.B rps_paijo
+[\-h | \-\-help] [\-V | \-\-version] [\-r | \-\-rounds <ROUNDS>] [\-a | \-\-auto] [
+.B \-\-skip <ROUND> | \-\-skip-rounds <ROUND,ROUND,...> | \-\-skip-even | \-\-skip-odd | \-\-skip-prime | \-\-skip-all]
+.B [\-\-set-start-round <ROUND>] [\-\-set-even-round | \-\-set-odd-round | \-\-set-prime-round]
+
+.SH DESCRIPTION
+Rust, Paper, Scissors is a CLI-based Rock, Paper, Scissors game written in Rust. It provides various game modes, including automatic play and custom round selection.
+
+.SH OPTIONS
+.TP
+.B \-h, \-\-help
+Displays the help page with all available options.
+
+.TP
+.B \-V, \-\-version
+Prints the game's version.
+
+.TP
+.B \-r, \-\-rounds <ROUNDS>
+Sets the round limit for the game.
+
+.TP
+.B \-a, \-\-auto
+Enables automatic mode (bot vs bot).
+
+.TP
+.B \-s, \-\-skip <ROUND>
+Skips the specified round.
+
+.TP
+.B \-\-skip-rounds <ROUND,ROUND,...>
+Skips multiple specified rounds.
+
+.TP
+.B \-\-skip-even
+Skips rounds that have even numbers.
+
+.TP
+.B \-\-skip-odd
+Skips rounds that have odd numbers.
+
+.TP
+.B \-\-skip-prime
+Skips rounds that are prime numbers.
+
+.TP
+.B \-\-skip-all
+Skips all rounds after round 1.
+
+.TP
+.B \-\-set-start-round <ROUND>
+Starts the game at a specified round.
+
+.TP
+.B \-\-set-even-round
+Only plays rounds with even numbers.
+
+.TP
+.B \-\-set-odd-round
+Only plays rounds with odd numbers.
+
+.TP
+.B \-\-set-prime-round
+Only plays rounds with prime numbers.
+
+.SH COMMANDS
+These are special in-game commands that can be typed while playing:
+.TP
+.B restart, reset
+Restarts the game.
+
+.TP
+.B end
+Ends the game and displays the result.
+
+.TP
+.B exit
+Exits the game without showing results.
+
+.SH EXAMPLES
+Play the game with 10 rounds:
+.EX
+rps_paijo \-\-rounds 10
+.EE
+
+Play in automatic mode:
+.EX
+rps_paijo \-\-auto
+.EE
+
+Start at round 5:
+.EX
+rps_paijo \-\-set-start-round 5
+.EE
+
+Skip rounds 3, 5, and 8:
+.EX
+rps_paijo \-\-skip-rounds 3,5,8
+.EE
+
+Play only even-numbered rounds:
+.EX
+rps_paijo \-\-set-even-round
+.EE
+
+.SH AUTHOR
+Written by lordpaijo.
+
+.SH SEE ALSO
+.BR cargo (1),
+.BR rustc (1)
+
+

@@ -14,3 +14,8 @@ rand = "0.9.0"
 colored = "3.0.0"
 crossterm = "0.28.1"
 clap = { version = "4", features = ["derive"] }
+
+[package.metadata.deb]
+assets = [
+    ["man/rps_paijo.1", "/usr/share/man/man1/rps_paijo.1", "644"]
+]
