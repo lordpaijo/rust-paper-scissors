@@ -1,6 +1,6 @@
 [package]
 name = "rps_paijo"
-version = "2.0.0"
+version = "2.0.1"
 edition = "2021"
 authors = ["LordPaijo (Iyan) iyanmaumakan.56.com"]
 description = "My first project of a simple Rock, Paper, Scissors game in Rust."
