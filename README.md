@@ -48,20 +48,26 @@ Arguments can be called by typing them after calling the game. Like flags or tag
 
 | Arguments | Parameters | Types | Functions | Syntax |
 |-----------|------------|:-----:|-----------|--------|
-| `-h` `--help` |  | `bool` | Prints help page | `rps_paijo --help` |
-| `-V` `--version` |  | `bool` | Prints the game's version | `rps_paijo --help` |
-| `-r` `--roounds` | `<ROUNDS>` e.g: 15| `u64` | Sets round limit | `rps_paijo --rounds <ROUNDS>` |
+| `-h` `--help` |  | `bool` | Prints the help page | `rps_paijo --help` |
+| `-V` `--version` |  | `bool` | Prints the game's version | `rps_paijo --version` |
+| `-r` `--rounds` | `<ROUNDS>` e.g.: 15 | `u64` | Sets the round limit | `rps_paijo --rounds <ROUNDS>` |
 | `-a` `--auto` |  | `bool` | Sets mode to auto (bot vs bot) | `rps_paijo --auto` |
-| `-s` `--skip` | `<SKIP ROUND>` e.g: 5| `u64` | Skips the one round | `rps_paoijo --skip <SKIP ROUND>` |
-| `--skip-rounds` | `<SKIP ROUNDS>` e.g: (3, 5, 8)| `Vector <u64>` | Skips the inputted rounds | `rps_paijo --skip-rounds <SKIP ROUNDS>` |
+| `-b` `--boost` | `<BOOST>` e.g.: 3 | `i32` | Increases both player and bot's score | `rps_paijo --boost <BOOST>` |
+| `--boost-player` | `<BOOST_PLAYER>` e.g.: 2 | `i32` | Increases only the player's score | `rps_paijo --boost-player <BOOST_PLAYER>` |
+| `--boost-bot` | `<BOOST_BOT>` e.g.: 1 | `i32` | Increases only the bot's score | `rps_paijo --boost-bot <BOOST_BOT>` |
+| `-H` `--handicap` | `<HANDICAP>` e.g.: 2 | `i32` | Decreases both player and bot's score | `rps_paijo --handicap <HANDICAP>` |
+| `--handicap-player` | `<HANDICAP_PLAYER>` e.g.: 1 | `i32` | Decreases only the player's score | `rps_paijo --handicap-player <HANDICAP_PLAYER>` |
+| `--handicap-bot` | `<HANDICAP_BOT>` e.g.: 1 | `i32` | Decreases only the bot's score | `rps_paijo --handicap-bot <HANDICAP_BOT>` |
+| `-s` `--skip` | `<SKIP ROUND>` e.g.: 5 | `u64` | Skips a single round | `rps_paijo --skip <SKIP ROUND>` |
+| `--skip-rounds` | `<SKIP ROUNDS>` e.g.: (3, 5, 8) | `Vec<u64>` | Skips multiple specified rounds | `rps_paijo --skip-rounds <SKIP ROUNDS>` |
 | `--skip-even` |  | `bool` | Skips rounds with even numbers | `rps_paijo --skip-even` |
 | `--skip-odd` |  | `bool` | Skips rounds with odd numbers | `rps_paijo --skip-odd` |
-| `--skip-prime` |  | `bool` | Skips rounds with prime numbers | `rps_paijo --skip-proime` |
-| `--skip-all` |  | `bool` | Skips all the rounds after round 1 | `rps_paijo --skip-all` |
-| `--set-start-round` | `<START ROUND>` e.g: 12| `u64` | Starts the round at the inputted | `rps_paojo --set-start-round` |
-| `--set-even-round` |  | `bool` | Sets the game to only play rounds with even numbers | `rps_paijo --set-even-round` |
-| `--set-odd-round` |  | `bool` | Sets the game to only play rounds with odd numbers | `rps_paijo --set-odd-round` |
-| `--set-prime-round` |  | `bool` | Sets the game to only play rounds with prime numbers | `rps_paijo --set-prime-round` |
+| `--skip-prime` |  | `bool` | Skips rounds that are prime numbers | `rps_paijo --skip-prime` |
+| `--skip-all` |  | `bool` | Skips all rounds after round 1 | `rps_paijo --skip-all` |
+| `--set-start-round` | `<START ROUND>` e.g.: 12 | `u64` | Starts the game at a specific round | `rps_paijo --set-start-round <START ROUND>` |
+| `--set-even-round` |  | `bool` | Only plays rounds with even numbers | `rps_paijo --set-even-round` |
+| `--set-odd-round` |  | `bool` | Only plays rounds with odd numbers | `rps_paijo --set-odd-round` |
+| `--set-prime-round` |  | `bool` | Only plays rounds that are prime numbers | `rps_paijo --set-prime-round` |
 
 ### Commands
 As for the commands, they are special in-game commands that do simple yet useful things... yeah that's dumb.
