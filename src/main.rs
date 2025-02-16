@@ -12,7 +12,8 @@ struct Args {
     #[arg(long, value_delimiter = ',')] skip_rounds: Option<Vec<u64>>,
     #[arg(long)] skip_even: bool, 
     #[arg(long)] skip_odd: bool,
-    #[arg(long)] skip_prime: bool, 
+    #[arg(long)] skip_prime: bool,
+    #[arg(long)] skip_all: bool,
     #[arg(long)] set_start_round: Option<u64>,
     #[arg(long)] set_even_round: bool, 
     #[arg(long)] set_odd_round: bool,
@@ -25,7 +26,7 @@ fn main() {
     game::run(
         start_round, args.rounds, args.auto,
         args.skip, args.skip_rounds, args.skip_even,
-        args.skip_odd, args.skip_prime, args.set_even_round,
-        args.set_odd_round, args.set_prime_round,
+        args.skip_odd, args.skip_prime, args.skip_all, 
+        args.set_even_round, args.set_odd_round, args.set_prime_round,
     );
 }

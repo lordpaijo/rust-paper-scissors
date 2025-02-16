@@ -13,9 +13,9 @@ fn is_prime(n: u64) -> bool {
 }
 
 pub fn run(
-    mut current_round: u64,rounds_limit: Option<u64>,
-    auto: bool, skip: Option<u64>, skip_rounds: Option<Vec<u64>>, 
-    skip_even: bool, skip_odd: bool, skip_prime: bool, 
+    mut current_round: u64,rounds_limit: Option<u64>, auto: bool, 
+    skip: Option<u64>, skip_rounds: Option<Vec<u64>>, skip_even: bool, 
+    skip_odd: bool, skip_prime: bool, skip_all: bool, 
     set_even: bool, set_odd: bool, set_prime: bool
 ) -> bool {
     execute!(stdout(), Clear(ClearType::All)).unwrap();
@@ -33,16 +33,17 @@ pub fn run(
             println!("{}","Round limit reached!".blue().bold());
             print_final_score(user, com, ties); return false; }
         }
-        if (set_even && set_odd) || (set_even && set_prime) || (set_odd && set_prime)
-            || (set_even && skip_even) || (set_odd && skip_odd) || (set_prime && skip_prime)
-            || (skip_even && skip_odd && skip_prime)
-        { println!("{}", "Cannot whitelist the combination! Dumping game...goodbye!".red().bold());
+        if (set_even && set_odd) || (set_even && set_prime) || (set_odd && set_prime) 
+            || (set_even && skip_even) || (set_odd && skip_odd) || (set_prime && skip_prime) 
+            || (skip_even && skip_odd && skip_prime) || (skip_all && (current_round > 0 || rounds_limit > Some(0)))
+        { println!("{}", "Cannot whitelist the passed arguments! Dumping game...goodbye!".red().bold());
           return false; }
         if skip == Some(current_round) 
             || (skip_rounds.as_ref().map_or(false, |rounds| rounds.contains(&current_round)))
             || (skip_even && current_round % 2 == 0)
             || (skip_odd && current_round % 2 != 0)
-            || (skip_prime && is_prime(current_round)) 
+            || (skip_prime && is_prime(current_round))
+            || (skip_all && current_round > 0 && rounds_limit > Some(0))
         { println!("Skipping round {}\n", current_round); current_round += 1; continue; }
         if ((set_even && current_round % 2 != 0) && (!skip_odd))
             || ((set_odd && current_round % 2 == 0) && (!skip_even))
