@@ -33,17 +33,21 @@ pub fn run(
             println!("{}","Round limit reached!".blue().bold());
             print_final_score(user, com, ties); return false; }
         }
+        if (set_even && set_odd) || (set_even && set_prime) || (set_odd && set_prime)
+            || (set_even && skip_even) || (set_odd && skip_odd) || (set_prime && skip_prime)
+            || (skip_even && skip_odd && skip_prime)
+        { println!("{}", "Cannot whitelist the combination! Dumping game...goodbye!".red().bold());
+          return false; }
         if skip == Some(current_round) 
             || (skip_rounds.as_ref().map_or(false, |rounds| rounds.contains(&current_round)))
             || (skip_even && current_round % 2 == 0)
             || (skip_odd && current_round % 2 != 0)
             || (skip_prime && is_prime(current_round)) 
         { println!("Skipping round {}\n", current_round); current_round += 1; continue; }
-        if (set_even && current_round % 2 != 0)
-            || (set_odd && current_round % 2 == 0)
-            || (set_prime && !is_prime(current_round)) 
+        if ((set_even && current_round % 2 != 0) && (!skip_odd))
+            || ((set_odd && current_round % 2 == 0) && (!skip_even))
+            || ((set_prime && !is_prime(current_round)) && (!skip_prime)) 
         { current_round += 1; continue; }
-
         header(user, com, ties, current_round);
 
         let user_choice = if auto {
