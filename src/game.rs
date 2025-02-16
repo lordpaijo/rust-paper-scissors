@@ -13,7 +13,9 @@ fn is_prime(n: u64) -> bool {
 }
 
 pub fn run(
-    mut current_round: u64,rounds_limit: Option<u64>, auto: bool, 
+    mut current_round: u64,rounds_limit: Option<u64>, auto: bool,
+    boost: i32, boost_player: i32, boost_bot: i32,
+    handicap: i32, handicap_player: i32, handicap_bot: i32,
     skip: Option<u64>, skip_rounds: Option<Vec<u64>>, skip_even: bool, 
     skip_odd: bool, skip_prime: bool, skip_all: bool, 
     set_even: bool, set_odd: bool, set_prime: bool
@@ -33,6 +35,11 @@ pub fn run(
             println!("{}","Round limit reached!".blue().bold());
             print_final_score(user, com, ties); return false; }
         }
+        if boost >= 0 && boost_player >= 0 && boost_bot >= 0 
+          { user += boost + boost_player; com += boost + boost_bot; }
+        if handicap >= 0 && handicap_player >= 0 && handicap_bot >= 0 
+        { user = (user - (handicap + handicap_player)).max(0); 
+          com = (com - (handicap + handicap_bot)).max(0); }
         if (set_even && set_odd) || (set_even && set_prime) || (set_odd && set_prime) 
             || (set_even && skip_even) || (set_odd && skip_odd) || (set_prime && skip_prime) 
             || (skip_even && skip_odd && skip_prime) || (skip_all && (current_round < 1 || rounds_limit < Some(1)))

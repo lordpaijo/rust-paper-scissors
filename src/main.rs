@@ -8,7 +8,13 @@ use clap::Parser;
 struct Args {
     #[arg(short, long)] rounds: Option<u64>, 
     #[arg(short, long)] auto: bool,
-    #[arg(short, long)] skip: Option<u64>, 
+    #[arg(short, long, default_value = "0")] boost: i32,
+    #[arg(long, default_value = "0")] boost_player: i32,
+    #[arg(long, default_value = "0")] boost_bot: i32,
+    #[arg(short, long)] skip: Option<u64>,
+    #[arg(short = 'H', long, default_value = "0")] handicap: i32,
+    #[arg(long, default_value = "0")] handicap_player: i32,
+    #[arg(long, default_value = "0")] handicap_bot: i32,
     #[arg(long, value_delimiter = ',')] skip_rounds: Option<Vec<u64>>,
     #[arg(long)] skip_even: bool, 
     #[arg(long)] skip_odd: bool,
@@ -25,6 +31,8 @@ fn main() {
     let start_round = args.set_start_round.unwrap_or(1);
     game::run(
         start_round, args.rounds, args.auto,
+        args.boost, args.boost_player, args.boost_bot,
+        args.handicap, args.handicap_player, args.handicap_bot,
         args.skip, args.skip_rounds, args.skip_even,
         args.skip_odd, args.skip_prime, args.skip_all, 
         args.set_even_round, args.set_odd_round, args.set_prime_round,
