@@ -40,11 +40,21 @@ $ cd rust-paper-scissors/
 $ cargo run
 ```
 
-## Playing
-I don't think I have to tell you how to play the game in general, it's the same as any other rock, paper, and scissors. However, I want to address some additional features which will be separated into two forms, arguments and commands.
+## Usage
+```
+rps_paijo
+
+```
+It's pretty much straight forward to play this game. Simply calling the game like any other cli apps in your terminal, and then you're good to go. Additionally, you can also use some arguments (with / without parameters) before playing to add some new changes. There are also in game commands you can use to help you out with playing the game.
 
 ### Arguments
-Arguments can be called by typing them after calling the game. Like flags or tags in any other program, they can be called using `-` or `--` before them. For example, `--help` will give you the help which what's inside it is the page of the list of available arguments.
+
+```
+rps_paijo --help
+
+```
+Firstly, you can use the `--help` argument to print out all the existing arguments that you can use. In a graphical table, the available arguments are as follows:
+
 
 | Arguments | Parameters | Types | Functions | Syntax |
 |-----------|------------|:-----:|-----------|--------|
@@ -70,7 +80,7 @@ Arguments can be called by typing them after calling the game. Like flags or tag
 | `--set-prime-round` |  | `bool` | Only plays rounds that are prime numbers | `rps_paijo --set-prime-round` |
 
 ### Commands
-As for the commands, they are special in-game commands that do simple yet useful things... yeah that's dumb.
+As for the commands, they run during your game session. So type up these to see the output:
 
 | Commands | Functions |
 |----------|-----------|
