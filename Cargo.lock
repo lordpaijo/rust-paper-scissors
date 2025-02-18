@@ -328,7 +328,7 @@ dependencies = [
 
 [[package]]
 name = "rps_paijo"
-version = "2.2.1"
+version = "2.2.2"
 dependencies = [
  "clap",
  "colored",
