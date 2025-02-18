@@ -43,7 +43,6 @@ $ cargo run
 ## Usage
 ```
 rps_paijo
-
 ```
 It's pretty much straight forward to play this game. Simply calling the game like any other cli apps in your terminal, and then you're good to go. Additionally, you can also use some arguments (with / without parameters) before playing to add some new changes. There are also in game commands you can use to help you out with playing the game.
 
@@ -51,7 +50,6 @@ It's pretty much straight forward to play this game. Simply calling the game lik
 
 ```
 rps_paijo --help
-
 ```
 Firstly, you can use the `--help` argument to print out all the existing arguments that you can use. In a graphical table, the available arguments are as follows:
 
