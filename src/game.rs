@@ -6,11 +6,8 @@ use colored::*;
 
 fn is_prime(n: u64) -> bool {
     if n < 2 { return false; }
-    for i in 2..=((n as f64).sqrt() as u64) {
-        if n % i == 0 { return false; }
-    }
-    true
-}
+    for i in 2..=((n as f64).sqrt() as u64) { if n % i == 0 { return false; } }
+    true }
 
 pub fn run(
     mut current_round: u64,rounds_limit: Option<u64>, auto: bool,
